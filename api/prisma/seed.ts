@@ -3,9 +3,7 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-const prisma = new PrismaClient({
-  datasourceUrl: process.env.DATABASE_URL,
-})
+const prisma = new PrismaClient()
 
 const categories = [
   {
@@ -44,7 +42,7 @@ const products = [
   { name: 'Sahumerio Mirra', slug: 'sahumerio-mirra', description: 'Sahumerio de mirra para meditación y protección', price: 9.99, categorySlug: 'veladoras-sahumerios', imageUrl: '' },
 
   // Tarot y Adivinación
-  { name: 'Tarot Rider Waite', slug: 'tarot-rider-waite', description: 'El经典的 tarot Rider Waite con guide incluido', price: 24.99, categorySlug: 'tarot-adivinacion', imageUrl: '' },
+  { name: 'Tarot Rider Waite', slug: 'tarot-rider-waite', description: 'El tarot Rider Waite clásico con guía incluido', price: 24.99, categorySlug: 'tarot-adivinacion', imageUrl: '' },
   { name: 'Cartas Oráculo', slug: 'cartas-oraculo', description: 'Oráculo de 64 cartas para adivinación daily', price: 18.99, categorySlug: 'tarot-adivinacion', imageUrl: '' },
   { name: 'Runas Vikingas', slug: 'runas-vikingas', description: 'Set de 24 piedras rúnicas con saquito de lino', price: 19.99, categorySlug: 'tarot-adivinacion', imageUrl: '' },
   { name: 'Tablero Ouija', slug: 'tablero-ouija', description: 'Tablero Ouija clásico con planchette', price: 29.99, categorySlug: 'tarot-adivinacion', imageUrl: '' },
@@ -58,17 +56,17 @@ const products = [
   { name: 'Rodocrosita', slug: 'rodocrosita', description: 'Piedra del amor propio y sanación emocional', price: 14.99, categorySlug: 'cristales-piedras', imageUrl: '' },
 
   // Amuletos y Talismanes
-  { name: 'Anillo Pentáculo', slug: 'anillo-pentaculo', description: 'Anillo de plata con pentáculo grabdo', price: 22.99, categorySlug: 'amuletos-talismanes', imageUrl: '' },
+  { name: 'Anillo Pentáculo', slug: 'anillo-pentaculo', description: 'Anillo de plata con pentáculo grabado', price: 22.99, categorySlug: 'amuletos-talismanes', imageUrl: '' },
   { name: 'Collar Ojo de Horacio', slug: 'collar-ojo-horacio', description: 'Collar con amuleto Ojo de Horacio', price: 18.99, categorySlug: 'amuletos-talismanes', imageUrl: '' },
   { name: 'Brazalete Chakra', slug: 'brazalete-chakra', description: 'Brazalete de 7 piedras chakras', price: 16.99, categorySlug: 'amuletos-talismanes', imageUrl: '' },
   { name: 'Medalla San Benito', slug: 'medalla-san-benito', description: 'Medalla de protección San Benito', price: 8.99, categorySlug: 'amuletos-talismanes', imageUrl: '' },
-  { name: 'Llave de Salomn', slug: 'llave-salomon', description: 'Réplica de la llave del rey Salomn', price: 25.99, categorySlug: 'amuletos-talismanes', imageUrl: '' },
+  { name: 'Llave de Salomón', slug: 'llave-salomon', description: 'Réplica de la llave del rey Salomón', price: 25.99, categorySlug: 'amuletos-talismanes', imageUrl: '' },
 
   // Libros y Manuales
   { name: 'Grimoire de Magia Negra', slug: 'grimoire-magia-negra', description: 'Manual completo de rituales y protecciones', price: 29.99, categorySlug: 'libros-manuales', imageUrl: '' },
-  { name: 'Manual de Runas', slug: 'manual-runas', description: 'Guía completa para tirar y interpretar runas', price: 19.99, categorySlug: 'libros-manuales', imageUrl: '' },
+  { name: 'Manual de Runas', slug: 'manual-runas', descripción: 'Guía completa para tirar y interpretar runas', price: 19.99, categorySlug: 'libros-manuales', imageUrl: '' },
   { name: 'Tarot para Principiantes', slug: 'tarot-principiantes', description: 'Aprende a leer el tarot desde cero', price: 22.99, categorySlug: 'libros-manuales', imageUrl: '' },
-  { name: 'Herbario Mgico', slug: 'herbario-magico', description: 'Plantas y hierbas con propiedades místicas', price: 24.99, categorySlug: 'libros-manuales', imageUrl: '' },
+  { name: 'Herbario Mágico', slug: 'herbario-magico', description: 'Plantas y hierbas con propiedades místicas', price: 24.99, categorySlug: 'libros-manuales', imageUrl: '' },
   { name: 'Enciclopedia de Cristales', slug: 'enciclopedia-cristales', description: 'Guía completa de propiedades de cristales', price: 27.99, categorySlug: 'libros-manuales', imageUrl: '' },
 ]
 
